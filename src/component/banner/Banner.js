@@ -11,17 +11,16 @@ export const Banner = () => {
 
 
     const fetchData = useCallback(async () => {
-        const request = await axios.get(requests.fetchTrending);
+        const request = await axios.get(requests.fetchNetflixOriginal);
         setMovie(
             request.data.results[
             Math.floor(Math.random() * request.data.results.length - 1)
             ]);
         return request;
-    }, [requests.fetchTrending]);
+    }, [requests.fetchNetflixOriginal]);
 
 
     useEffect(() => {
-
         fetchData();
     }, [])
 
@@ -38,8 +37,7 @@ export const Banner = () => {
         >
             <div className='banner-contents'>
                 <h1 className='banner-title'>
-                    {movie?.title || movie?.name || movie?.original_name}
-                    New folder       </h1>
+                    {movie?.title || movie?.name || movie?.original_name}</h1>
 
                 <div className='banner-btns'>
                     {btnName?.map((element) => {

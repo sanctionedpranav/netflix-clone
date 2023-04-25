@@ -9,9 +9,13 @@ export const Netflix = () => {
         <div className='app-container'>
             {/* Nav */}
             <Banner />
-            <Rows isLargeRow title="Netflix Originals" fetchUrl={requests.fetchTrending} />
-            <Rows title="Netflix Originals" fetchUrl={requests.fetchTrending} />
-            <Rows title="Netflix Originals" fetchUrl={requests.fetchTrending} />
+            {
+                requests.map((list) => {
+                    return (
+                        <Rows title={list.title} fetchUrl={list.fetchApis || list.fetchNetflixOriginal} />
+                    )
+                })
+            }
         </div>
     )
 }
