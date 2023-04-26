@@ -6,12 +6,15 @@ const base_url = "https://image.tmdb.org/t/p/original"
 
 export const Rows = ({ title, fetchUrl, isLargeRow }) => {
     const [movies, setMovies] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     // This will run based on a specific condition
     const movieData = useCallback(async () => {
         const movieRequest = await axios.get(fetchUrl) // This is basically doing this => (https://api.themoviedb.org/3.fetchUrl)
         setMovies(movieRequest.data.results)
+        setIsLoading(false);
         return movieRequest;
+
     }, [fetchUrl]);
 
 
@@ -24,15 +27,18 @@ export const Rows = ({ title, fetchUrl, isLargeRow }) => {
         <div className='row'>
             <h2>{title}</h2>
 
-            <div className='row-posters'>
-                {movies.map((element) => {
-                    return (
-                        <img key={element.id}
-                            className={`row-poster ${isLargeRow && "row-posterLarge"}`}
-                            src={`${base_url}${title === "Netflix Original" ? element.poster_path : element.backdrop_path}`} alt={element.title} />
-                    )
-                })}
-            </div>
+            {!isLoading ?
+
+                <div className='row-posters'>
+                    {movies.map((element) => {
+                        return (
+                            <img key={element.id}
+                                className={`row-poster ${isLargeRow && "row-posterLarge"}`}
+                                src={`${base_url}${title === "Netflix Original" ? element.poster_path : element.backdrop_path}`} alt={element.title} />
+                        )
+                    })}
+                </div>
+                : <p>Loading...</p>}
         </div>
     )
 }
