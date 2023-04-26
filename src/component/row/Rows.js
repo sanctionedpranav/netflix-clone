@@ -29,7 +29,7 @@ export const Rows = ({ title, fetchUrl, isLargeRow }) => {
                     return (
                         <img key={element.id}
                             className={`row-poster ${isLargeRow && "row-posterLarge"}`}
-                            src={`${base_url}${isLargeRow ? element.poster_path : element.backdrop_path}`} alt={element.title} />
+                            src={`${base_url}${title === "Netflix Original" ? element.poster_path : element.backdrop_path}`} alt={element.title} />
                     )
                 })}
             </div>
