@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import "./Banner.css"
 import axios from "../../axios.js";
-import requests from "../../request.js";
+import requests from "../../requests.js";
 import { Button } from '../../commonComponent/button/Button';
 
 export const Banner = () => {
