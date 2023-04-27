@@ -1,0 +1,21 @@
+.loginScreen {
+    position: relative;
+    height: 100%;
+}
+
+.loginScreen-background {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 2rem;
+}
+
+.loginScreen-logo {
+    left: 0;
+    width: 150px;
+    object-fit: contain;
+}
+
+.loginScreen-btn{
+    padding: 1rem;
+}
