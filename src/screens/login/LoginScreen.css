@@ -1,13 +1,30 @@
 .loginScreen {
     position: relative;
-    height: 100%;
+    background: url("https://www.whats-on-netflix.com/wp-content/uploads/2021/08/netflix-library-photo-scaled.jpg") center no-repeat;
+    background-size: cover;
+
+}
+
+.loginScreen-gradient {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8)0,
+            rgba(0, 0, 0, 0) 60%,
+            rgba(0, 0, 0, 0.8)100%);
+
 }
 
 .loginScreen-background {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 2rem;
+    padding: 0 2rem;
+    background: rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8)100%,
+            rgba(0, 0, 0, 0) 100%,
+            rgba(0, 0, 0, 0.8)100%);
+
 }
 
 .loginScreen-logo {
@@ -16,6 +33,63 @@
     object-fit: contain;
 }
 
-.loginScreen-btn{
-    padding: 1rem;
+.loginScreen-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #e50914;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.loginScreen-body {
+    width: 100%;
+    overflow-x: hidden;
+    position: absolute;
+    top: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    z-index: 1;
+    color: #fff;
+}
+
+.loginScreen-body>h1 {
+    font-size: 3rem;
+    margin-bottom: 1.2rem;
+}
+
+.loginScreen-body>h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1.8rem;
+}
+
+.loginScreen-body>h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.loginScreen-input{
+    margin: 1.2rem;
+}
+
+
+.loginScreen-input>form>input {
+    padding: 10px;
+    outline-width: 0;
+    height: 1.8rem;
+    width: 30%;
+    border: none;
+    max-width: 600px;
+}
+.loginScreen-getStarted{
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #e50914;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
 }
