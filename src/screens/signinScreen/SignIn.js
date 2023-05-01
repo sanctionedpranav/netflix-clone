@@ -13,14 +13,23 @@ export const SignIn = () => {
         auth.createUserWithEmailAndPassword(
             emailRef.current.value,
             passwordRef.current.value
-        ).then((authUser)=>{
+        ).then((authUser) => {
             console.log(authUser);
-        }).catch((error)=>{
+        }).catch((error) => {
             alert(error.message)
         })
     };
     const signIn = (e) => {
         e.preventDefault();
+
+        auth.signInWithEmailAndPassword(
+            emailRef.current.value,
+            passwordRef.current.value
+        ).then((authUser) => {
+            console.log(authUser);
+        }).catch((error) => {
+            alert(error.message)
+        })
     }
 
 
@@ -32,8 +41,8 @@ export const SignIn = () => {
                 <input ref={passwordRef} placeholder='Password' type='password' />
                 <Button onClick={register} className="signupScreen-btn" type="submit" name="Sign In" />
 
-                <h4><span className='signupScreen-grey'>New to Netflix?</span> <span 
-                onClick={register} className='signupScreen-link'>Sign Up now.</span></h4>
+                <h4><span className='signupScreen-grey'>New to Netflix?</span> <span
+                    onClick={register} className='signupScreen-link'>Sign Up now.</span></h4>
             </form>
         </div>
     )
