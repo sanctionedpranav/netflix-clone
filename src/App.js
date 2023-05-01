@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Netflix } from './container/Netflix';
 import "./App.css"
 import {
@@ -9,8 +9,21 @@ import {
     Link,
 } from "react-router-dom";
 import LoginScreen from './screens/login/LoginScreen';
+import { auth } from './firebase';
 
 const App = () => {
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged((userAuth => {
+            if (userAuth) {
+                // Logged in 
+                console.log(userAuth);
+            } else {
+                // Logged out
+            }
+        }))
+        return unsubscribe;
+    }, [])
+
     return (
         <div className='app'>
             <Routes>
