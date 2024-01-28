@@ -9,7 +9,7 @@ const requests =
         { title: "Comedy Movies", fetchApis: `/discover/movie?api_key=${API_KEY}&with_genres=36` },
         { title: "Horror Movies", fetchApis: `/discover/movie?api_key=${API_KEY}&with_genres=27` },
         { title: "Romance Movies", fetchApis: `/discover/movie?api_key=${API_KEY}&with_genres=10749` },
-        { title: "Documentry Movies", fetchApis: `/discover/movie?api_key=${API_KEY}&with_genres=99` },]
+        { title: "Documentary Movies", fetchApis: `/discover/movie?api_key=${API_KEY}&with_genres=99` },]
 
 
 

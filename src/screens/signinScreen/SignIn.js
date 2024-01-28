@@ -39,7 +39,7 @@ export const SignIn = () => {
                 <h1>Sign In</h1>
                 <input ref={emailRef} placeholder='Email' type='email' />
                 <input ref={passwordRef} placeholder='Password' type='password' />
-                <Button onClick={register} className="signupScreen-btn" type="submit" name="Sign In" />
+                <Button onClick={signIn} className="signupScreen-btn" type="submit" name="Sign In" />
 
                 <h4><span className='signupScreen-grey'>New to Netflix?</span> <span
                     onClick={register} className='signupScreen-link'>Sign Up now.</span></h4>
